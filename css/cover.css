@@ -3,6 +3,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
+  font-size: 1.2em;
 }
 
 /*
@@ -86,9 +87,10 @@ h3{
 }
 
 #logout{
-  margin: 15px;
+  margin: 12px;
   color: rgba(255,178,117,1);
   cursor: pointer;
+  font-size: 1.2em;
 }
 
 
