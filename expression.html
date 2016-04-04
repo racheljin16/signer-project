@@ -3,27 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/expression.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
 	<title>Expressions</title>
 </head>
 <body>
-	<nav class="navbar navbar-dark navbar-fixed-top nav-signer" style="background-color:rgba(0,0,0,0.7)">
-  		<div class="container">
-			<ul style="margin-top:5px" class="nav navbar-nav col-sm-6">
-  	  			<li class="nav-item active"><a class="nav-link" style="font-weight:bold" href="http://www.ruicongjin.com/AAU/signer">Signer <span class="sr-only">(current)</span></a></li>
-				<li class="nav-item"><a class="nav-link" href="../classes/">Features</a></li>
-				<li class="nav-item"><a class="nav-link" href="../Category/">Download</a></li>
-			</ul>
-  			<div class="input-group search-bar navbar-right col-sm-6">
-        		<input type="text" id="autocomplete1" class="form-control" aria-describedby="basic-addon3">
-        		<span class="input-group-addon" id="basic-addon3">Search</span>
-    		</div>
-  		</div>
-	</nav>
+    <nav class="navbar navbar-secondary navbar-default navbar-static-top">
+        <div class="container-fluid inner">
+            <div class="navbar-header col-sm-2">
+                <a class="navbar-brand" style="color: rgba(255,178,117,1); font-weight: bold" href="index.html">Signer</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse in col-sm-6">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a style="color:rgba(255,178,117,1)" href="expression.html">Learn</a></li>
+                <li><a style="color:rgba(255,178,117,1)" href="quiz.html">Quizzes</a></li>
+                <li ><a style="color:rgba(255,178,117,1)" id="login-btn" href="signup-headed.html">Log In/Sign Up</a></li>
+                <li><p id="logout">Log Out</p></li>
+              </ul>
+            </div>
+
+            <div class="input-group mysearchbar col-sm-4 pull-right">
+                <input type="text" id="autocomplete1" class="form-control" placeholder="Search for signs..." aria-describedby="basic-addon2">
+                <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
+            </div>
+        </div>
+
+    </nav>
 
 	<div class="container">
-		<h1>Learn</h1>
+		<h1 class="page-title">Learn</h1>
 	</div>
 
 	<div class="container">
@@ -215,6 +225,59 @@
 			</div>
 		</div>
 	</div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 footer-group">
+                    <p class="list-title">Company</p>
+                    <ul class="footer-list">
+                        <a href="#"><li>About</li></a>
+                        <a href="#"><li>Careers</li></a>
+                        <a href="#"><li>Press</li></a>
+                        <a href="#"><li>Affiliates</li></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3 footer-group">
+                    <p class="list-title">Explore</p>
+                    <ul class="footer-list">
+                        <a href="#"><li>Register</li></a>
+                        <a href="#"><li>Blog</li></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3 footer-group">
+                    <p class="list-title">Download</p>
+                    <ul class="footer-list">
+                        <a href="#"><li>For iOS</li></a>
+                        <a href="#"><li>For Android</li></a>
+                    </ul>
+                </div>
+                <div class="col-sm-3 footer-group">
+                    <p class="list-title">Follow Us</p>
+                    <ul class="footer-list">
+                        <li class="footer-icon">
+                            <a href="#">
+                                <i class="fa fa-twitter" ></i>
+                            </a>
+                        </li>
+                        <li class="footer-icon">
+                            <a href="#">
+                                 <i class="fa fa-facebook"></i>
+                             </a>
+                         </li>
+                        <li class="footer-icon">
+                            <a href="#">
+                                 <i class="fa fa-envelope-o"></i>
+                             </a>
+                        </li>
+                        <li>&copy; 2015-2016 Signer Group, Inc.</li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </footer>   
+
 
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
