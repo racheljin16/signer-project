@@ -73,14 +73,14 @@
                         <div id="navbar" class="navbar-collapse collapse in col-sm-6">
                           <ul class="nav navbar-nav navbar-right">
                             <li><a style="color:rgba(255,178,117,1)" href="expression.html">Learn</a></li>
-                            <li><a style="color:rgba(255,178,117,1)" href="quizzes.html">Quizzes</a></li>
+                            <li><a style="color:rgba(255,178,117,1)" href="quiz.html">Quizzes</a></li>
                             <li ><a style="color:rgba(255,178,117,1)" id="login-btn" href="signup.html">Log In/Sign Up</a></li>
                             <li><p id="logout">Log Out</p></li>
                           </ul>
                         </div>
 
                         <div class="input-group mysearchbar col-sm-4 pull-right">
-                            <input type="text" id="autocomplete1" class="form-control" placeholder="I love you" aria-describedby="basic-addon2">
+                            <input type="text" id="autocomplete1" class="form-control" placeholder="Search for signs..." aria-describedby="basic-addon2">
                             <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
                         </div>
                     </div>
@@ -107,28 +107,35 @@
     <div id="content">
         <div class="section-quiz">
             <div class="container">
-                <h2 class="cover">See For Yourself</h2>
-                <div class="col-lg-12">
-                    <h3 class="vid-question">Do you know what he is asking?</h3>
-                    <video class="sample-vid" width="70%" controls>
-                            <source src="video/ASL_wannagetcoffee.mp4">
-                    </video>
+                <h2 class="cover">Go Ahead, Quiz Yourself</h2>
+                <div class="col-lg-12 vid-holder">
+                    <h3 class="vid-question">What is he asking?</h3>
+                    <!-- <div id="vid-holder"> -->
+	                    <video id="sample-vid" controls>
+	                            <source src="video/ASL_wannagetcoffee.mp4">
+	                    </video>
+	                    <div id="vid-overlay" class="hidethenshow hidden">
+			                <div>
+			                	<p id="outcome"></p>
+		                	</div>
+	                    </div>
+                    <!-- </div> -->
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="responses">
-                        <p class="anwser"><a class="btn btn-default btn-type1 col-md-6" href="#" role="button">A. Want to get some coffee?</a></p>
-                        <p class="anwser"><a class="btn btn-default btn-type2 col-md-6" href="#" role="button">B. Do you like noodles?</a></p>
+                        <button class="btn btn-default btn-type1 col-md-6 answer" href="" type="button" onclick="correctResponse()">A. Want to get some coffee?</button>
+                        <button class="btn btn-default btn-type2 col-md-6 answer" href="" type="button" onclick="wrongResponse()">B. Do you like noodles?</button>
                     </div>
                 </div>
-                <p class="cover">
-                    <a class="btn btn-lg btn-default get-started" href="#" role="button">Get Started For Free</a>
-                </p>
+                <div class="inner"></div>
+                <div class="inner"></div>
             </div>
         </div>
 
         <div class="section_download">
             <div class="container">
                 <h2 class="cover">Go Mobile</h2>
+                <div class="inner"></div>
                 <div class="row">
                     <div class="col-lg-7 col-sm-6 mobile-display">
                         <img class="img-download" src="images/modules.png" alt="mobile device spread">
@@ -204,6 +211,7 @@
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 <script src="js/arrow.js"></script>
 <script src="js/scroll.js"></script>
+<script src="js/quiz.js"></script>
 <script src="js/jquery.rotate.min.js"></script>
     <script type="text/javascript">
         $(".gotointro").click(function(){
