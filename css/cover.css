@@ -3,7 +3,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
-  /*font-size: 1.2em;*/
+  font-size: 1.2em;
 }
 
 /*
@@ -24,7 +24,6 @@ body {
 h1{
   color: #fff;
   font-size: 3em;
-
 }
 h2{
   color: rgba(255,178,117,1);
@@ -68,10 +67,6 @@ h3{
  * Header
  */
 
-.mysearchbar{
-  margin-right: 15px;
-  margin-top: 5px;
-}
 
 .navbar{
   background-color: transparent;
@@ -79,9 +74,10 @@ h3{
    border-color: transparent;
 }
 
-.navbar-brand{
-  font-size: 2.5ex;
+.navbar-secondary {
+  background-color: rgba(0,0,0,.7);
 }
+
 
 .navbar li { 
   color: #000 
@@ -96,11 +92,10 @@ h3{
 }
 
 #logout{
-  margin: 15px;
+  margin: 12px;
   color: rgba(255,178,117,1);
   cursor: pointer;
-  /*font-size: 1.2em;*/
-  display: inline-block;
+  font-size: 1.2em;
 }
 
 
@@ -109,32 +104,12 @@ h3{
  */
 
 .cover {
-  padding: 30px 0;
+  padding: 30px 0 10px;
 }
 
-.signer-title{
-  margin-top: 2em;
-}
-
-@media screen and (max-width: 768px) {
-    .signer-title {
-        margin-top: 0;
-    }
-    h1{
-      font-size: 2em;
-    }
-}
-
-#overlay {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#000;
-    opacity:0.5;
-    z-index:-1;
-    color:#fff;
+.search-bar{
+  margin-left: 10em;
+  margin-right: 10em;
 }
 
 #bgvid { 
@@ -219,24 +194,41 @@ h3{
   -webkit-animation-delay: 2.8s;
 } 
 
-/*SECTION: SEE FOR YOURSELF*/
-.content{
-  padding-top: 10px;
+
+
+/**********************************************
+SECTION: QUIZ 
+**********************************************/
+
+.vid-holder {
+  position:relative;
 }
 
-.section-quiz {
-  margin-top: 1em;
+#vid-overlay {
+  position: absolute;
+  top: -10px;
+  left:9%;
+  width: 82%;
+  height:110%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,.8);
+  border-radius: 8px;
 }
 
-.sample-vid{
+#sample-vid{
   border: 1px solid #333;
-  margin-bottom: 20px;
+  width: 80%;
+}
+
+.section-quiz h3 {
+  padding-bottom: 0;
 }
 
 .anwser{
   padding-left: 2em;
   padding-right: 2em;
-  font-style: italic
+  font-style: italic;
+  margin-bottom: 0;
 }
 
 .btn-type1{
@@ -249,12 +241,15 @@ h3{
   color: #333;
 }
 
-
 .responses {
-    width: 70%;
+    width: 72%;
     margin: 0 auto;
 }
 
+button {
+  width: 100%;
+  margin: 0 auto;
+}
 
 .get-started {
     background-color: rgba(255,178,117,1);
@@ -263,8 +258,53 @@ h3{
     margin-top: 2em;
 }
 
+#outcome {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0 20px;
+  color: #fff;
+  font-weight: 300;
+  line-height: .5em;
+}
 
-/*SECTION: GO MOBILE*/
+#outcome h3 {
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+
+#outcome a {
+  color: rgb(255,178,117);
+  line-height: 2.5em;
+  text-decoration: none;
+
+}
+
+#outcome a:hover {
+  opacity:.5;
+}
+
+.hidden {
+  visibility: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.fader {
+  opacity: .25;
+}
+
+.btn-default[disabled] {
+  opacity: 0;
+}
+
+
+
+/**********************************************
+SECTION: GO MOBILE
+**********************************************/
 
 .section_download{
   background: rgba(0,0,0,.1);
@@ -322,3 +362,70 @@ footer {
     padding: 0 8px 16px;
 }
 
+
+
+
+/* RESPONSIVE CSS */
+
+@media screen and (min-width: 480px) {
+  #outcome {
+    margin-top: 14%;
+  }
+}
+
+
+
+
+@media screen and (min-width: 720px) {
+
+  /**********************************************
+  SECTION: QUIZ
+  **********************************************/
+
+  #sample-vid {
+    width: 70%;
+  }
+
+  .responses {
+    width: 65%;
+  }
+
+  #vid-overlay {
+    width: 72%;
+    left: 14%;
+  }
+
+  #outcome {
+    margin-top: 22%;
+  }
+
+
+}
+
+
+@media screen and (min-width: 991px) {
+  .btn-default[disabled] {
+    opacity: .25;
+  }
+
+  #vid-overlay {
+    height: 114%;
+    top: 0;
+  }
+
+  .responses {
+    width: 66%;
+  }
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+  .responses {
+    width: 66.5%;
+  }
+
+
+}
