@@ -8,7 +8,7 @@ $(function(){
     	var mypassword = $("#password").val();
     	console.log(email, password);
 
-    	var ref = new Firebase("https://crackling-heat-8990.firebaseio.com");
+    	var ref = new Firebase("https://blinding-fire-5487.firebaseio.com/?page=Auth");
     	ref.createUser({
  			 email    :  myemail,
  			 password : mypassword
@@ -17,17 +17,16 @@ $(function(){
     			console.log("Error creating user:", error);
   			} else {
     			console.log("Successfully created user account with uid:", userData.uid);
-    			window.location.href="http://www.ruicongjin.com/AAU/signer";
+    			window.location.href="index.html";
   		}
 		}); 
 		return false;
 	});
 
 	$("#logout").click(function() {
-		var ref = new Firebase("https://crackling-heat-8990.firebaseio.com");
+		var ref = new Firebase("https://blinding-fire-5487.firebaseio.com/?page=Auth");
 		ref.unauth();
-		window.location.href="http://www.google.com";
-		// alert("already logged out!");
+		window.location.href="index.html";
 	});
 
 
