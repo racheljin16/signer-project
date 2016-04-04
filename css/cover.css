@@ -3,7 +3,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 /*
@@ -74,6 +74,17 @@ h3{
    border-color: transparent;
 }
 
+.navbar-header a {
+  font-size: 2em;
+  /*letter-spacing: 1px;*/
+  font-weight: 300;
+}
+
+.navbar-header a:hover {
+  font-size: 1.7em;
+}
+
+
 .navbar-secondary {
   background-color: rgba(0,0,0,.7);
 }
@@ -82,6 +93,10 @@ h3{
 .navbar li { 
   color: #000 
 } 
+
+.navbar li:hover {
+  opacity: .6;
+}
 
 #login-btn{
   border: 1px solid rgba(255,178,117,1);
@@ -193,6 +208,10 @@ h3{
   -webkit-animation: arrows 2.4s 0.4s;
   -webkit-animation-delay: 2.8s;
 } 
+
+.gotointro:hover {
+  font-size: 1.5rem;
+}
 
 
 
@@ -364,8 +383,28 @@ footer {
 
 
 
+/**********************************************
+SECTION: EXPRESSIONS
+**********************************************/
+
+.expression-size img{
+  max-width: 100%;
+}
+
+.page-title {
+  color: #404040;
+}
+
+
+
 
 /* RESPONSIVE CSS */
+
+  /**********************************************
+  SECTION: QUIZ
+  **********************************************/
+
+
 
 @media screen and (min-width: 480px) {
   #outcome {
@@ -374,13 +413,7 @@ footer {
 }
 
 
-
-
 @media screen and (min-width: 720px) {
-
-  /**********************************************
-  SECTION: QUIZ
-  **********************************************/
 
   #sample-vid {
     width: 70%;
