@@ -1,11 +1,4 @@
-/*@media screen and (min-width: 768px){
-
-	.col-sm-4 {
-		padding: 0;
-	}
-}*/
-
-/*body{
+body{
 	text-align: center;
 }
 
@@ -13,9 +6,23 @@ a{
 	font-size: 1.2em;
 }
 
-h1{
-	padding-bottom: 1em;
-	padding-top:3em;
+a:hover {
+	font-size: 1.2em;
+}
+
+.navbar-header a {
+	font-weight: lighter;
+}
+
+.navbar-header a:hover {
+	font-size: 2em;
+	opacity: .7;
+}
+
+
+.section-title {
+	color:rgba(255,178,117,1);
+	font-weight: lighter;
 }
 
 .expression-size{
@@ -26,11 +33,11 @@ h1{
 	max-width: 100%;
 }
 
-.search-bar{
-	padding-top: 12px;
+h3 {
+	margin-top: .3em;
 }
 
-@media screen and (max-width: 768px){
+/*@media screen and (max-width: 768px){
 	.search-bar{
 		padding-bottom: 12px;
 	}

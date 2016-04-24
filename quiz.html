@@ -4,14 +4,16 @@
 	<meta charset="UTF-8">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet"> 
+    <link href="css/quiz.css" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
-	<title>Signer Quizzes</title>
+	<title>Signer - Quizzes</title>
 </head>
 <body>
     <nav class="navbar navbar-secondary navbar-default navbar-static-top">
         <div class="container-fluid inner">
             <div class="navbar-header col-sm-2">
-                <a class="navbar-brand" style="color: rgba(255,178,117,1); font-weight: bold" href="index.html">Signer</a>
+                <a class="navbar-brand" style="color: rgba(255,178,117,1);" href="index.html">Signer</a>
             </div>
 
             <div id="navbar" class="navbar-collapse collapse in col-sm-6">
@@ -32,22 +34,98 @@
     </nav>
 
 	<div class="container">
-		<h1>Quizzes</h1>
+		<h1 class="page-title">Quizzes</h1>
 	</div>
 
 
+<!-- 		<div id="example3" class="hidden">
+		<p class="about">Example 3</p>
+		<div class="container example-holders"> -->
+		
 
-		<h1 style="color:black">ADD QUIZ CONTENT HERE</h1>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+    <div class="container quiz-container quiz1-container">
+        <h2 class="section-title">Quiz #1</h2>
+        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>Sort the following numbers in acending order.</p>
+			<ul class="sortables-1">
+				<li id="li7"> 
+					<img src="images/nine.jpg" alt="9">
+				</li>
+				<li id="li5">
+					<img src="images/three.jpg" alt="3">
+				</li>
+				<li id="li2">
+					<img src="images/six.jpg" alt="6">
+				</li>
+			</ul>
+	</div>
+
+
+    <div class="container quiz-container quiz2-container">
+        <h2 class="section-title">Quiz #2</h2>
+        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to its corresponding word.</p>
+        <div class="row">
+            <div class="col-sm-4 quiz draggable-2">
+                <img  src="images/play.jpg" alt="Play">
+            </div>
+            <div class="col-sm-4 quiz draggable-2">
+                <img src="images/more.jpg" alt="More">
+            </div>
+            <div class="col-sm-4 quiz draggable-2">
+                <img  src="images/same.jpg" alt="Same">
+            </div>
+        </div>
+        <div class="row quiz-boxes">
+            <div class="col-sm-4 quiz quiz-box droppable">
+                <h3>SAME</h3>
+            </div>
+            <div class="col-sm-4 quiz quiz-box droppable">
+                <h3>PLAY</h3>            
+            </div>
+            <div class="col-sm-4 quiz quiz-box droppable">
+                <h3>MORE</h3>            
+            </div>
+        </div>
+	</div>
+
+
+    <div class="container quiz-container quiz3-container">
+            <h2 class="section-title">Quiz #3</h2>
+            <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Arrange the following signs to spell "CAT".</p>
+        <div class="row sortables-3">
+            <div class="col-sm-4 quiz ">
+                <img src="images/t.jpg" alt="letter T">
+            </div>
+            <div class="col-sm-4 quiz ">
+                <img src="images/c.jpg" alt="letter C">
+            </div>
+            <div class="col-sm-4 quiz ">
+                <img src="images/a.jpg" alt="letter A">
+            </div>
+        </div>
+	</div>
+
+    <div class="container quiz-container quiz4-container">
+        <div class="row">
+            <h2 class="section-title">Quiz #4</h2>
+            <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Select the sign that means "I love you."</p>
+            <button class="col-sm-4 quiz" type="button" onclick="">
+                <img src="images/no.jpg" alt="no">
+            </button>
+            <button class="col-sm-4 quiz" type="button" onclick="">
+                <img src="images/which.jpg" alt="which">
+            </button>
+            <button class="col-sm-4 quiz" type="button" onclick="">
+                <img src="images/iloveyou.jpg" alt="I love you">
+            </button>
+        </div>
+	</div>
+
+    <div class="container quiz-container quiz4-container">        
+        <div class="row">
+            <h2 class="section-title">Results</h2>
+            <div class="chartcontainer">Render a chart or some result here</div>
+        </div>
+    </div>
 
 
 
@@ -66,8 +144,8 @@
                 <div class="col-sm-3 footer-group">
                     <p class="list-title">Explore</p>
                     <ul class="footer-list">
-                        <a href="#"><li>Register</li></a>
-                        <a href="#"><li>Blog</li></a>
+                        <a href="expression.html"><li>Learn</li></a>
+                        <a href="quiz.html"><li>Quizzes</li></a>
                     </ul>
                 </div>
                 <div class="col-sm-3 footer-group">
@@ -102,37 +180,15 @@
         </div>
     </footer>   
 
-    <script src="js/jquery-2.1.4.min.js"></script>
-
+    <!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+	<script src="js/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="js/jqueryui.js"></script>
-<script src="js/script.js"></script>
-<script src="js/signup.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-<script src="js/arrow.js"></script>
-<script src="js/scroll.js"></script>
-<script src="js/quiz.js"></script>
-<script src="js/jquery.rotate.min.js"></script>
-    <script type="text/javascript">
-        $(".gotointro").click(function(){
-            $(".hindenme").animate({height:"100vh"}, 600);
-        });
-        $(".closeme").click(function(){
-            $(".hindenme").animate({height:"0"}, 300);
-        });
-        $(".closeme").rotate({ 
-   bind: 
-     { 
-        mouseover : function() { 
-            $(this).rotate({animateTo:180});
-        },
-        mouseout : function() { 
-            $(this).rotate({animateTo:0});
-        }
-     } 
-   
-});
-    </script>
+	<script src="js/script.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+	<script src="js/quiz-page.js"></script>
 
 </body>
 </html>

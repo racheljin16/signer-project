@@ -3,7 +3,7 @@ a,
 a:focus,
 a:hover {
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 /*
@@ -70,19 +70,20 @@ h3{
 
 .navbar{
   background-color: transparent;
-  background: transparent;
-  border-color: transparent;
+   background: transparent;
+   border-color: transparent;
 }
 
 .navbar-header a {
   font-size: 2em;
-  /*letter-spacing: 1px;*/
   font-weight: 300;
 }
 
 .navbar-header a:hover {
-  font-size: 1.7em;
+  font-size: 2em;
+  opacity:.7;
 }
+
 
 .navbar-secondary {
   background-color: rgba(0,0,0,.7);
@@ -346,6 +347,10 @@ SECTION: GO MOBILE
     width: 120px;
 }
 
+.download-link img:hover {
+    opacity: .7;
+}
+
 
 
 /*SECTION: FOOTER*/
@@ -353,6 +358,11 @@ SECTION: GO MOBILE
 footer {
     background-color: rgba(255,178,117,1);
     padding: 40px 0;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #808080;
 }
 
 .footer-group {
@@ -417,8 +427,6 @@ SECTION: EXPRESSIONS
 
 
 @media screen and (min-width: 720px) {
-
-
 
   #sample-vid {
     width: 70%;
