@@ -17,6 +17,7 @@ $(function(){
     			console.log("Error creating user:", error);
   			} else {
     			console.log("Successfully created user account with uid:", userData.uid);
+          localStorage.setItem("Greeting"," back," + myemail);
     			window.location.href="index.html";
   		}
 		}); 
@@ -26,6 +27,8 @@ $(function(){
 	$("#logout").click(function() {
 		var ref = new Firebase("https://blinding-fire-5487.firebaseio.com/?page=Auth");
 		ref.unauth();
+    localStorage.setItem("Greeting", "");
+    console.log(localStorage.Greeting);
 		window.location.href="index.html";
 	});
 
