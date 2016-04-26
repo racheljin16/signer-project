@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet"> 
     <link href="css/quiz.css" rel="stylesheet"> 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
-	<title>Signer - Quizzes</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Signer - Quizzes</title>
 </head>
 <body>
     <nav class="navbar navbar-secondary navbar-default navbar-static-top">
@@ -33,99 +52,95 @@
 
     </nav>
 
-	<div class="container">
-		<h1 class="page-title">Quizzes</h1>
-	</div>
+    <h4 style="padding-top: 2em;"> Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
 
 
-<!-- 		<div id="example3" class="hidden">
-		<p class="about">Example 3</p>
-		<div class="container example-holders"> -->
-		
-
-    <div class="container quiz-container quiz1-container">
-        <h2 class="section-title">Quiz #1</h2>
-        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>Sort the following numbers in acending order.</p>
-			<ul class="sortables-1">
-				<li id="li7"> 
-					<img src="images/nine.jpg" alt="9">
-				</li>
-				<li id="li5">
-					<img src="images/three.jpg" alt="3">
-				</li>
-				<li id="li2">
-					<img src="images/six.jpg" alt="6">
-				</li>
-			</ul>
-	</div>
-
-
-    <div class="container quiz-container quiz2-container">
-        <h2 class="section-title">Quiz #2</h2>
-        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to its corresponding word.</p>
-        <div class="row">
-            <div class="col-sm-4 quiz draggable-2">
-                <img  src="images/play.jpg" alt="Play">
-            </div>
-            <div class="col-sm-4 quiz draggable-2">
-                <img src="images/more.jpg" alt="More">
-            </div>
-            <div class="col-sm-4 quiz draggable-2">
-                <img  src="images/same.jpg" alt="Same">
-            </div>
-        </div>
-        <div class="row quiz-boxes">
-            <div class="col-sm-4 quiz quiz-box droppable">
-                <h3>SAME</h3>
-            </div>
-            <div class="col-sm-4 quiz quiz-box droppable">
-                <h3>PLAY</h3>            
-            </div>
-            <div class="col-sm-4 quiz quiz-box droppable">
-                <h3>MORE</h3>            
-            </div>
-        </div>
-	</div>
-
+    <div class="container">
+        <h1 class="page-title">Quizzes</h1>
+    </div>
 
     <div class="container quiz-container quiz3-container">
-            <h2 class="section-title">Quiz #3</h2>
-            <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Arrange the following signs to spell "CAT".</p>
+        <h2 class="section-title">Quiz #1</h2>
+        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Arrange the following signs to spell "C-A-T".</p>
+        <p>Current Order: <span id="hint3"></span></p>
+        <p>Number of Moves: <span id="moves3"></span></p>            
         <div class="row sortables-3">
-            <div class="col-sm-4 quiz ">
-                <img src="images/t.jpg" alt="letter T">
+            <div id="3.3" class="col-sm-4 quiz ">
+                <img  src="images/t.jpg" alt="letter T">
             </div>
-            <div class="col-sm-4 quiz ">
-                <img src="images/c.jpg" alt="letter C">
+            <div id="3.1" class="col-sm-4 quiz ">
+                <img  src="images/c.jpg" alt="letter C">
             </div>
-            <div class="col-sm-4 quiz ">
+            <div id="3.2" class="col-sm-4 quiz ">
                 <img src="images/a.jpg" alt="letter A">
             </div>
         </div>
-	</div>
+    </div>
+        
+    <div class="container quiz-container quiz1-container">
+        <h2 class="section-title">Quiz #2</h2>
+        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>Sort the following sign language numbers into acending order.</p>
+        <p>Current Order: <span id="hint1"></span></p>
+        <p>Number of Moves: <span id="moves1"></span></p>
+        <div class="row sortables-1">
+            <div id="1.9" class="col-sm-4 quiz"> 
+                <img src="images/nine.jpg" alt="9">
+            </div>
+            <div id="1.3" class="col-sm-4 quiz">
+                <img src="images/three.jpg" alt="3">
+            </div>
+            <div id="1.6" class="col-sm-4 quiz">
+                <img src="images/six.jpg" alt="6">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container quiz-container quiz2-container">
+        <h2 class="section-title">Quiz #3</h2>
+        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>
+        <div class="row">
+            <div class="col-sm-4  quiz-box droppable play-box" >
+                <h3 id="randomWord"></h3>            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 quiz draggable-2 play-img">
+                <img id="1" class="play-img" src="images/play.jpg" alt="Play">
+            </div>
+            <div class="col-sm-4 quiz draggable-2 more-img">
+                <img id="2" class="more-img" src="images/more.jpg" alt="More">
+            </div>
+            <div class="col-sm-4 quiz draggable-2 same-img">
+                <img id="3" class="same-img" src="images/same.jpg" alt="Same">
+            </div>
+        </div>
+    </div>
+
 
     <div class="container quiz-container quiz4-container">
         <div class="row">
             <h2 class="section-title">Quiz #4</h2>
             <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Select the sign that means "I love you."</p>
-            <button class="col-sm-4 quiz" type="button" onclick="">
+            <button id="quiz-btn1" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
                 <img src="images/no.jpg" alt="no">
             </button>
-            <button class="col-sm-4 quiz" type="button" onclick="">
+            <button id="quiz-btn2" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
                 <img src="images/which.jpg" alt="which">
             </button>
-            <button class="col-sm-4 quiz" type="button" onclick="">
+            <button id="quiz-btn3" class="col-sm-4 quiz quiz-btn" type="button" onclick="correctResponse4()">
                 <img src="images/iloveyou.jpg" alt="I love you">
             </button>
         </div>
-	</div>
+        <div id="outcome4"> </div>
+    </div>
 
-    <div class="container quiz-container quiz4-container">        
+<!--     <div class="container quiz-container quiz4-container">        
         <div class="row">
             <h2 class="section-title">Results</h2>
             <div class="chartcontainer">Render a chart or some result here</div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -181,14 +196,26 @@
     </footer>   
 
     <!-- <script src="js/jquery-2.1.4.min.js"></script> -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="js/jqueryui.js"></script>
-	<script src="js/script.js"></script>
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-	<script src="js/jquery.ui.touch-punch.min.js"></script>
-	<script src="js/quiz-page.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/quiz-page.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76983795-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>
