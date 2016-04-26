@@ -38,28 +38,21 @@ li {
 	list-style: none;
 }
 
-.sortables-1 {
-	margin-bottom: 20px;
-}
-
 img {
-	max-width:  427px;
-	max-height: 240px;
+	max-width:  auto;
+	max-height: 180px;
 	border: 2px solid #404040;
 	margin: 0 0 5px;
 }
 
-.quiz-boxes {
-	margin: 0 -15px;
-}
-
 .quiz-box {
-	width: 30.75%;
-	height: 240px;
-	border: 2px solid #404040;
-	padding: 80px;
-	margin: 0 15px;
-	background-color: rgba(255,178,117,.5);
+	float: none;
+	height: 200px;
+	border: 2px dashed #404040;
+	padding: 5%;
+	margin: 0 auto;
+	background-color:rgba(255,178,117,.5);
+	border-radius: 20px;
 }
 
 h3 {
@@ -71,4 +64,17 @@ button {
 	margin: 0;
 	border: none;
 	background-color: transparent;
+}
+
+#outcome4 h3 {
+	padding: 0 0 10px;
+	margin: 0;
+}
+
+#outcome4 a {
+	color: #ffb275;
+}
+
+#outcome4 a:hover {
+	opacity: .7;
 }
