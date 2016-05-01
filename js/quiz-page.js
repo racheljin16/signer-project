@@ -1,3 +1,4 @@
+
 $(document).ready(function() {	
 
 	document.getElementById("hint1").innerHTML = "Incorrect order";
@@ -43,13 +44,13 @@ $(document).ready(function() {
 				// console.log(sortedIDsQuiz1, orderQuiz1);
 				document.getElementById("hint1").innerHTML = notifiyCorrect;
 				$( ".sortables-1" ).sortable( "disable" );
-				setLocalStorate("Q1Moves",sortCounter1);
+				//setLocalStorage("Q1Moves",sortCounter1);
 			} else {
 				sortCounter1++;
 				document.getElementById("moves1").innerHTML = sortCounter1;				
 				// console.log(sortedIDsQuiz1, orderQuiz1);
 				document.getElementById("hint1").innerHTML = notifyIncorrect;
-				setLocalStorate("Q1Moves",sortCounter1);
+				//setLocalStorage("Q1Moves",sortCounter1);
 			};
 		}
 	});
@@ -91,20 +92,68 @@ $(document).ready(function() {
 	});
 });
 
-	function incorrectResponse4() {
-		document.getElementById("outcome4").innerHTML = '<h3>That is incorrect. Perhaps you should go back to <a href="expression.html">Learn</a> more.<h3>';
-		document.getElementById("quiz-btn1").disabled = true;
-		document.getElementById("quiz-btn2").disabled = true;
-		document.getElementById("quiz-btn3").disabled = true;
-	}
+function saveResults() {
+	//Quiz one
+	var moves_quiz1 = document.getElementById("moves3").innerHTML;
+	var hint_quiz1 = document.getElementById("hint3").innerHTML;
+	var result_quiz1 = '';
+	if (hint_quiz1 == "That's correct.")
+		result_quiz1 = "correct";
+	else
+		result_quiz1 = "wrong";
+	if (moves_quiz1 == "--" || moves_quiz1 == "")
+	  moves_quiz1 = "0"
+	localStorage.setItem("moves_quiz1", moves_quiz1);
+	localStorage.setItem("result_quiz1", result_quiz1);
 
-	function correctResponse4() {
-		document.getElementById("outcome4").innerHTML = '<h3>Correct, great job!<h3>';
-		document.getElementById("quiz-btn1").disabled = true;
-		document.getElementById("quiz-btn2").disabled = true;
-		document.getElementById("quiz-btn3").disabled = true;
-	}
+	//Quiz two
+	var hint_quiz2 = document.getElementById("hint1").innerHTML;
+	var result_quiz2 = '';
+	if (hint_quiz2 == "That's correct.")
+		result_quiz2 = "correct";
+	else
+		result_quiz2 = "wrong";
+	localStorage.setItem("result_quiz2", result_quiz2);
+
+	//Quiz three
+	
+	//Quiz four
+
+	// Summary
+	var correctAnswers = 0;
+	correctAnswers = (result_quiz1 == "correct") + (result_quiz2 == "correct");
+	var correctRate = correctAnswers/2.0 * 100;
+	var scoreHistory = JSON.parse(localStorage.getItem('scoreHistory')) || [];
+	scoreHistory.push(correctRate);
+	localStorage.setItem('scoreHistory', JSON.stringify(scoreHistory));
+	
+	document.getElementById("chart").style.display = "block";
+
+	var resultChart;
+	resultChart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'chart',
+			type: 'area',
+		},
+		title: {
+			text: 'Reords chart'
+		},
+		yAxis: {
+			title: {
+				text: "Correct rate/ \%"
+			},
+			min: 0,
+			max: 100 
+		},
+		series: [{
+			name: 'Correct rate in history',
+			data: scoreHistory
+		}]
+	})
+	
+}
 
 
+	
 
 	
