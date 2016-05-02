@@ -1,0 +1,47 @@
+body{
+	text-align: center;
+}
+
+a{
+	font-size: 1.2em;
+}
+
+a:hover {
+	font-size: 1.2em;
+}
+
+.navbar-header a {
+	font-weight: lighter;
+}
+
+.navbar-header a:hover {
+	font-size: 2em;
+	opacity: .7;
+}
+
+
+.section-title {
+	color:rgba(255,178,117,1);
+	font-weight: lighter;
+}
+
+.expression-size{
+	display: block;
+}
+
+.expression-size img{
+	max-width: 100%;
+}
+
+h3 {
+	margin-top: .3em;
+}
+
+/*@media screen and (max-width: 768px){
+	.search-bar{
+		padding-bottom: 12px;
+	}
+	h1{
+		padding-top:7em;
+	}
+}*/
