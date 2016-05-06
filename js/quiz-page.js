@@ -1,101 +1,195 @@
 
 $(document).ready(function() {	
 
-	document.getElementById("hint1").innerHTML = "Incorrect order";
-	document.getElementById("hint3").innerHTML = "Incorrect order";
-	var sortCounter1 = 0;
-	var sortCounter3 = 0;
-	document.getElementById("moves1").innerHTML = "--";
-	document.getElementById("moves3").innerHTML = "--";
+	// document.getElementById("numberStatus").innerHTML = "Incorrect order";
+	// document.getElementById("catStatus").innerHTML = "Incorrect";
+	var numberMovesCounter = 3;
+	var catMovesCounter = 4;
+	document.getElementById("number-quiz-moves").innerHTML = "3";
+	document.getElementById("cat-quiz-moves").innerHTML = "4";
 
-	var orderQuiz1 = [1.3,1.6,1.9];
-	var orderQuiz3 = [3.1,3.2,3.3];
+	var correctNumbersQuizOrder = ["number3", "number6","number9" ];
+	var correctCatQuizOrder = ["cat-C","cat-A","cat-T"];
 	var notifyIncorrect = "Not yet, keep trying.";
-	var notifiyCorrect = "That's correct."
+	var notifiyCorrect = "Correct!";
+	var gameover = "Sorry, you used all of your available moves.";
 
 	
+	// Select a random word for drag/drop quiz
 	var randomNumber = Math.floor(Math.random() * 3) + 1;
-	console.log(randomNumber);
+	// console.log(randomNumber);
 	if (randomNumber === 1) {
 		document.getElementById("randomWord").innerHTML = "PLAY";
 		$(".play-img").addClass('valid');
+		$(".more-img, .same-img").addClass('invalid');
 	} else if (randomNumber === 2) {
 		document.getElementById("randomWord").innerHTML = "MORE";
 		$(".more-img").addClass('valid');
+		$(".play-img, .same-img").addClass('invalid');
 	} else {
 		document.getElementById("randomWord").innerHTML = "SAME";
 		$(".same-img").addClass('valid');
+		$(".more-img, .same-img").addClass('invalid');
 	}
 
-	// var draggableID = $(".valid").attr("id");
-	// console.log(draggableID);
 
+// Arranging numbers Quiz
 
-	$(".sortables-1").sortable( {
-		containment: ".quiz1-container",
+	$(".sortables-numbersQuiz").sortable( {
+		containment: ".numbers-quiz-container",
 		revert: true,
 
 		update: function( event, ui ) {			
-			var sortedIDsQuiz1 = $(this).sortable("toArray").toString();
+			var currentNumberQuizOrder = $(this).sortable("toArray").toString();
 
-			if ( sortedIDsQuiz1 == orderQuiz1 ) {
-				sortCounter1++;
-				document.getElementById("moves1").innerHTML = sortCounter1;
-				// console.log(sortedIDsQuiz1, orderQuiz1);
-				document.getElementById("hint1").innerHTML = notifiyCorrect;
-				$( ".sortables-1" ).sortable( "disable" );
-				//setLocalStorage("Q1Moves",sortCounter1);
+			if ( currentNumberQuizOrder == correctNumbersQuizOrder && numberMovesCounter == 3 ) {
+				numberMovesCounter--;
+				console.log(numberMovesCounter);
+				$(".hidethenshow-numberQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-numberQuiz").addClass("fader");
+				document.getElementById("outcome-numberQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned 3 tokens!</p><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt="">';
+				$( ".sortables-numbersQuiz" ).sortable( "disable" );
+				document.getElementById("number-quiz-moves").innerHTML = numberMovesCounter;
+				// setLocalStorage("Q1Moves",numberMovesCounter);
+			} else if ( currentNumberQuizOrder == correctNumbersQuizOrder && numberMovesCounter == 2) {
+				numberMovesCounter--;
+				console.log(numberMovesCounter);
+				$(".hidethenshow-numberQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-numberQuiz").addClass("fader");
+				document.getElementById("outcome-numberQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned 2 tokens!</p><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt="">';
+				$( ".sortables-numbersQuiz" ).sortable( "disable" );
+				document.getElementById("number-quiz-moves").innerHTML = numberMovesCounter;
+				// setLocalStorage("Q1Moves",numberMovesCounter);
+			} else if ( currentNumberQuizOrder == correctNumbersQuizOrder && numberMovesCounter == 1) {
+				numberMovesCounter--;
+				console.log(numberMovesCounter);
+				$(".hidethenshow-numberQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-numberQuiz").addClass("fader");
+				document.getElementById("outcome-numberQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned a token.</p><img class="token" src="images/pencil.png" alt="">';
+				$( ".sortables-numbersQuiz" ).sortable( "disable" );
+				// setLocalStorage("Q1Moves",numberMovesCounter);			
+			} else if  ( numberMovesCounter <= 1 ) {
+				numberMovesCounter--;
+				$(".hidethenshow-numberQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-numberQuiz").addClass("fader");
+				document.getElementById("outcome-numberQuiz").innerHTML = '<h3 class="gameover">' + gameover + '</h3>' + '<p>You did not earn any tokens for this quiz.';
+				document.getElementById("cat-quiz-moves").innerHTML = numberMovesCounter;				
+				$( ".sortables-numbersQuiz" ).sortable( "disable" );
+				document.getElementById("number-quiz-moves").innerHTML = numberMovesCounter;				
+				// setLocalStorage("Q1Moves",numberMovesCounter);
 			} else {
-				sortCounter1++;
-				document.getElementById("moves1").innerHTML = sortCounter1;				
-				// console.log(sortedIDsQuiz1, orderQuiz1);
-				document.getElementById("hint1").innerHTML = notifyIncorrect;
-				//setLocalStorage("Q1Moves",sortCounter1);
+				numberMovesCounter--;
+				document.getElementById("number-quiz-moves").innerHTML = numberMovesCounter;				
+				//setLocalStorage("Q1Moves",numberMovesCounter);
 			};
 		}
 	});
 
+
+
+// Drag/drop Quiz
+
 	$(".draggable-2").draggable( {
-			containment: ".quiz2-container",
+			containment: ".dragDropQuiz-container",
 		});
 
 	$(".droppable-2").droppable({
+		// accept: ".valid",
+
 		drop: function( event, ui ) {
 
-			var draggableID = $(".valid").attr("id");
-			console.log(draggableID);
+
+
+
+			// var draggedID = $(this).attr("id");
+			// console.log(draggedID);
 
 			// if ( randomNumber == id of draggable )
+
+
+
+
+
 		}
 	});
 
-	$(".sortables-3").sortable( {
-		containment: ".quiz3-container",
+
+// C-A-T Quiz
+
+	$(".sortables-catQuiz").sortable( {
+		containment: ".cat-quiz-container",
 		revert: true,
 
 		update: function( event, ui ) {
-			var sortedIDsQuiz3 = $(this).sortable("toArray").toString();
+			var currentCatQuizOrder = $(this).sortable("toArray").toString();
 
-			if ( sortedIDsQuiz3 == orderQuiz3 ) {
-				sortCounter3++;
-				document.getElementById("moves3").innerHTML = sortCounter3;				
-				// console.log(sortedIDsQuiz3, orderQuiz3, notifiyCorrect);
-				document.getElementById("hint3").innerHTML = notifiyCorrect;
-				$( ".sortables-3" ).sortable( "disable" );
+			if ( currentCatQuizOrder == correctCatQuizOrder && catMovesCounter == 3 ) {
+				catMovesCounter--;
+				console.log(catMovesCounter);
+				$(".hidethenshow-catQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-catQuiz").addClass("fader");				
+				document.getElementById("outcome-catQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned 3 tokens!</p><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt="">';
+				$( ".sortables-catQuiz" ).sortable( "disable" );
+				document.getElementById("cat-quiz-moves").innerHTML = catMovesCounter;				
+				// setLocalStorage("catQuizMoves",catMovesCounter);
+			} else if ( currentCatQuizOrder == correctCatQuizOrder && catMovesCounter == 2 ) {
+				catMovesCounter--;
+				console.log(catMovesCounter);
+				$(".hidethenshow-catQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-catQuiz").addClass("fader");				
+				document.getElementById("outcome-catQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned 2 tokens!</p><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt="">';
+				$( ".sortables-catQuiz" ).sortable( "disable" );
+				document.getElementById("cat-quiz-moves").innerHTML = catMovesCounter;				
+				// setLocalStorage("catQuizMoves",catMovesCounter);
+			} else if ( currentCatQuizOrder == correctCatQuizOrder && catMovesCounter == 1 ) {
+				catMovesCounter--;
+				console.log(catMovesCounter);				
+				$(".hidethenshow-catQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-catQuiz").addClass("fader");				
+				document.getElementById("outcome-catQuiz").innerHTML = '<h3>' + notifiyCorrect + '</h3>' + '<p>You earned a token!</p><img class="token" src="images/pencil.png" alt="">';								
+				$( ".sortables-catQuiz" ).sortable( "disable" );
+				document.getElementById("cat-quiz-moves").innerHTML = catMovesCounter;				
+				// setLocalStorage("catQuizMoves",catMovesCounter);
+			} else if ( catMovesCounter <= 1 ) {
+				catMovesCounter--;
+				console.log(catMovesCounter);
+				$(".hidethenshow-catQuiz").removeClass("hidden").addClass("visible");
+				$(".inner-wrapper-catQuiz").addClass("fader");				
+				document.getElementById("outcome-catQuiz").innerHTML = '<h3 class="gameover">' + gameover + '</h3>' + '<p>You did not earn any tokens for this quiz.</p>';				
+				$( ".sortables-catQuiz" ).sortable( "disable" );
+				document.getElementById("cat-quiz-moves").innerHTML = catMovesCounter;				
+				// setLocalStorage("catQuizMoves",catMovesCounter);
 			} else {
-				sortCounter3++;
-				document.getElementById("moves3").innerHTML = sortCounter3;				
-				// console.log(sortedIDsQuiz3, orderQuiz3, notifyIncorrect);
-				document.getElementById("hint3").innerHTML = notifyIncorrect;
+				catMovesCounter--;
+				console.log(catMovesCounter);
+				document.getElementById("cat-quiz-moves").innerHTML = catMovesCounter;				
+				// setLocalStorage("catQuizMoves",catMovesCounter);
 			};
 		}
 	});
 });
 
+
+// "I Love You" Quiz
+	function correctResponse4() {
+		$(".hidethenshow-iloveyouQuiz").removeClass("hidden").addClass("visible");
+		$(".inner-wrapper-iloveyouQuiz").addClass("fader");				
+		document.getElementById("outcome-iloveyouQuiz").innerHTML = '<h3>Correct</h3><p>You earned 2 tokens!</p><img class="token" src="images/pencil.png" alt=""><img class="token" src="images/pencil.png" alt="">'; ;				
+		$( ".quiz-btn" ).prop("disabled",true);
+	}
+
+	function incorrectResponse4() {
+		$(".hidethenshow-iloveyouQuiz").removeClass("hidden").addClass("visible");
+		$(".inner-wrapper-iloveyouQuiz").addClass("fader");				
+		document.getElementById("outcome-iloveyouQuiz").innerHTML = '<h3 class="gameover">That is incorrect.</h3><p>You did not earn any tokens for this quiz.</p>' ;				
+		$( ".quiz-btn" ).prop("disabled",true);
+	}
+
+
 function saveResults() {
 	//Quiz one
-	var moves_quiz1 = document.getElementById("moves3").innerHTML;
-	var hint_quiz1 = document.getElementById("hint3").innerHTML;
+	var moves_quiz1 = document.getElementById("cat-quiz-moves").innerHTML;
+	var hint_quiz1 = document.getElementById("outcome-catQuiz").innerHTML;
 	var result_quiz1 = '';
 	if (hint_quiz1 == "That's correct.")
 		result_quiz1 = "correct";
@@ -107,7 +201,7 @@ function saveResults() {
 	localStorage.setItem("result_quiz1", result_quiz1);
 
 	//Quiz two
-	var hint_quiz2 = document.getElementById("hint1").innerHTML;
+	var hint_quiz2 = document.getElementById("outcome-numberQuiz").innerHTML;
 	var result_quiz2 = '';
 	if (hint_quiz2 == "That's correct.")
 		result_quiz2 = "correct";
@@ -136,7 +230,7 @@ function saveResults() {
 			type: 'area',
 		},
 		title: {
-			text: 'Reords chart'
+			text: 'Records chart'
 		},
 		yAxis: {
 			title: {
