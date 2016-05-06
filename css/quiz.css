@@ -41,13 +41,17 @@ footer {
 	border-radius: 15px;		
 }
 
-#outcome-catQuiz h3, #outcome-numberQuiz h3, #outcome-iloveyouQuiz h3 {
+#outcome-catQuiz h3, #outcome-numberQuiz h3, #outcome-iloveyouQuiz h3, #outcome-dragdropQuiz h3 {
   font-size: 1.5em;
   margin:40px 0 0;
   color: #ffb275;
   font-weight: 300;
   line-height: .5em;
 }
+
+ #outcome-dragdropQuiz h3 {
+ 	padding-top: 100px;
+ }
 
 .gameover {
 	padding-top: 100px;
@@ -82,7 +86,7 @@ li {
 	margin: 0 -2px;
 }
 
-.col-sm-4 img {
+.quiz img {
 	max-width:  auto;
 	max-height: 180px;
 	border: 2px solid #707070;
@@ -199,3 +203,12 @@ button:focus {
 	outline: 0;
 }
 
+.dropped {
+	opacity: .5;
+}
+
+#chart {
+	max-width: 660px;
+	margin: 0 auto;
+	border: 1px solid #cdcdcd;
+}
