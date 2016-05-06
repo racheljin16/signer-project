@@ -91,20 +91,21 @@ h3{
 
 
 .navbar li { 
-  color: #000 
+   
 } 
 
 .navbar li:hover {
   opacity: .6;
+  transition: .2s;
 }
 
-#login-btn{
-  border: 1px solid rgba(255,178,117,1);
+/*#login-btn{
+  text-decoration: underline;
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 13px;
   margin-left: 10px;
-}
+}*/
 
 #logout{
   margin: 12px;
@@ -370,16 +371,22 @@ SECTION: GO MOBILE
 footer {
     background-color: rgba(255,178,117,1);
     padding: 40px 0;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.2);
+}
+
+footer a{
+  color:#8B572A;
 }
 
 footer a:hover {
   text-decoration: none;
-  color: #808080;
+  /*color: white;*/
+  transition: .2s;
 }
 
 .footer-group {
     text-align: left;
-    color: #fff;
+    color: #8B572A;
 }
 
 .list-title {
@@ -394,11 +401,12 @@ footer a:hover {
 }
 
 .fa {
-    color: #fff;
+    color: #8B572A;
 }
 
 .fa:hover {
-    color:#8B572A;
+    color:white;
+    transition: .2s;
 }
 
 .footer-icon {
