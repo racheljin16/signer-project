@@ -52,90 +52,197 @@
 
     </nav>
 
-    <h4 style="padding-top: 2em;"> Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
-
-
     <div class="container">
         <h1 class="page-title">Quizzes</h1>
     </div>
+    <h4 class="greeting" > Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
 
-    <div class="container quiz-container quiz3-container">
-        <h2 class="section-title">Quiz #1</h2>
-        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Arrange the following signs to spell "C-A-T".</p>
-        <p>Current Order: <span id="hint3"></span></p>
-        <p>Number of Moves: <span id="moves3"></span></p>            
-        <div class="row sortables-3">
-            <div id="3.3" class="col-sm-4 quiz ">
-                <img  src="images/t.jpg" alt="letter T">
-            </div>
-            <div id="3.1" class="col-sm-4 quiz ">
-                <img  src="images/c.jpg" alt="letter C">
-            </div>
-            <div id="3.2" class="col-sm-4 quiz ">
-                <img src="images/a.jpg" alt="letter A">
-            </div>
+
+    <div class="container quiz-container cat-quiz-container">
+    	<div class="inner-wrapper-catQuiz">
+	        <h2 class="section-title">Quiz #1</h2>
+	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Earn tokens by arranging the following signs in as few moves as possible to spell "C-A-T".</p>
+	        <div class="row scoring-list">
+		        <div class="col-sm-3 score-holder">
+			        <p class="scoring-item">1 move =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-2 score-holder">
+		        	<p class="scoring-item">2 moves = &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-2 score-holder">
+		    	    <p class="scoring-item">3 moves =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">    	    
+		        	</p>
+	        	</div>
+		        <div class="col-sm-2 score-holder">
+		    	    <p class="scoring-item">4 moves =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">    	    
+		        	</p>
+	        	</div>
+		        <div class="col-sm-3 score-holder">
+		    	    <p class="scoring-item">More than 4 = <span style="font-style: normal">Game Over</span></p>
+	        	</div>
+    	    </div>
+	        <div class="row sortables-catQuiz">
+	            <div id="cat-T" class="col-sm-4 quiz ">
+	                <img  src="images/t.jpg" alt="letter T">
+	            </div>
+	            <div id="cat-C" class="col-sm-4 quiz ">
+	                <img  src="images/c.jpg" alt="letter C">
+	            </div>
+	            <div id="cat-A" class="col-sm-4 quiz ">
+	                <img src="images/a.jpg" alt="letter A">
+	            </div>
+	        </div>
+	        <!-- <div class="statusbox"> -->
+<!-- 	        	<div class="cat-order-box">
+			        <p class="status-title">Current Order</p>
+			        <p id="catStatus" class="result-update"></p>
+		        </div> -->
+		        <div class="moves-counter moves-counter-catQuiz">
+			        <p class="status-title"><span id="cat-quiz-moves" class="result-update"></span> Moves Remaining </p>
+		        </div>
+	        <!-- </div> -->
+	        <br>
+        </div>
+        <div id="quiz-overlay" class="hidethenshow-catQuiz hidden">
+            <div>
+            	<p id="outcome-catQuiz"></p>
+        	</div>
         </div>
     </div>
         
-    <div class="container quiz-container quiz1-container">
-        <h2 class="section-title">Quiz #2</h2>
-        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>Sort the following sign language numbers into acending order.</p>
-        <p>Current Order: <span id="hint1"></span></p>
-        <p>Number of Moves: <span id="moves1"></span></p>
-        <div class="row sortables-1">
-            <div id="1.9" class="col-sm-4 quiz"> 
-                <img src="images/nine.jpg" alt="9">
-            </div>
-            <div id="1.3" class="col-sm-4 quiz">
-                <img src="images/three.jpg" alt="3">
-            </div>
-            <div id="1.6" class="col-sm-4 quiz">
-                <img src="images/six.jpg" alt="6">
-            </div>
+    <div class="container quiz-container numbers-quiz-container">
+    	<div class="inner-wrapper-numberQuiz">
+	        <h2 class="section-title">Quiz #2</h2>
+	        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>In 3 moves or less, sort the following sign language numbers into acending order.</p>
+	        <div class="row scoring-list">
+		        <div class="col-sm-3 score-holder">
+			        <p class="scoring-item">1 move =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-3 score-holder">
+		        	<p class="scoring-item">2 moves = &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-3 score-holder">
+		    	    <p class="scoring-item">3 moves =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-3 score-holder">
+		    	    <p class="scoring-item">More than 3 = <span style="font-style: normal">Game Over</span></p>
+	        	</div>
+    	    </div>
+	        <div class="row sortables-numbersQuiz">
+	            <div id="number9" class="col-sm-4 quiz"> 
+	                <img src="images/nine.jpg" alt="9">
+	            </div>
+	            <div id="number3" class="col-sm-4 quiz">
+	                <img src="images/three.jpg" alt="3">
+	            </div>
+	            <div id="number6" class="col-sm-4 quiz">
+	                <img src="images/six.jpg" alt="6">
+	            </div>
+	        </div>
+	        <!-- <div class="statusbox"> -->
+<!-- 	        	<div class="number-order-box">
+			        <p class="status-title">Current Order</p>
+			        <p id="numberStatus" class="result-update"></p>
+		        </div> -->
+		        <div class="moves-counter moves-counter-numberQuiz">
+			        <p class="status-title"><span id="number-quiz-moves" class="result-update"></span> Moves Remaining </p>
+		        </div>
+	        <!-- </div> -->
+	        <br>
         </div>
+        <div id="quiz-overlay" class="hidethenshow-numberQuiz hidden">
+            <div>
+            	<p id="outcome-numberQuiz"></p>
+        	</div>
+        </div>        
     </div>
 
 
-    <div class="container quiz-container quiz2-container">
-        <h2 class="section-title">Quiz #3</h2>
-        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>
-        <div class="row">
-            <div class="col-sm-4  quiz-box droppable play-box" >
-                <h3 id="randomWord"></h3>            
-            </div>
+    <div class="container quiz-container dragDropQuiz-container">
+    	<div class="inner-wrapper-dragdropQuiz">
+	        <h2 class="section-title">Quiz #3</h2>
+	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>        
+	        <div class="row">
+	            <div class="col-sm-4  quiz-box droppable play-box" >
+	                <h3 id="randomWord"></h3>            
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="col-sm-4 quiz draggable-2 play-img">
+	                <img id="1" class="play-img" src="images/play.jpg" alt="Play">
+	            </div>
+	            <div class="col-sm-4 quiz draggable-2 more-img">
+	                <img id="2" class="more-img" src="images/more.jpg" alt="More">
+	            </div>
+	            <div class="col-sm-4 quiz draggable-2 same-img">
+	                <img id="3" class="same-img" src="images/same.jpg" alt="Same">
+	            </div>
+	        </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4 quiz draggable-2 play-img">
-                <img id="1" class="play-img" src="images/play.jpg" alt="Play">
-            </div>
-            <div class="col-sm-4 quiz draggable-2 more-img">
-                <img id="2" class="more-img" src="images/more.jpg" alt="More">
-            </div>
-            <div class="col-sm-4 quiz draggable-2 same-img">
-                <img id="3" class="same-img" src="images/same.jpg" alt="Same">
-            </div>
-        </div>
+        <div id="quiz-overlay" class="hidethenshow-dragdropQuiz hidden">
+            <div>
+            	<p id="outcome-dragdropQuiz"></p>
+        	</div>
+        </div>         
     </div>
 
 
     <div class="container quiz-container quiz4-container">
-        <div class="row">
+    	<div class="inner-wrapper-iloveyouQuiz">
             <h2 class="section-title">Quiz #4</h2>
             <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Select the sign that means "I love you."</p>
-            <button id="quiz-btn1" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
-                <img src="images/no.jpg" alt="no">
-            </button>
-            <button id="quiz-btn2" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
-                <img src="images/which.jpg" alt="which">
-            </button>
-            <button id="quiz-btn3" class="col-sm-4 quiz quiz-btn" type="button" onclick="correctResponse4()">
-                <img src="images/iloveyou.jpg" alt="I love you">
-            </button>
+	        <div class="row scoring-list">
+		        <div class="col-sm-6 score-holder">
+			        <p class="scoring-item">Correct Response =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-6 score-holder">
+		        	<p class="scoring-item">Incorrect Response = <span style="font-style: normal">Game Over</span></p>
+	        	</div>
+		    </div>
+		    <div class="row">
+	            <button id="quiz-btn1" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
+	                <img src="images/no.jpg" alt="no">
+	            </button>
+	            <button id="quiz-btn2" class="col-sm-4 quiz quiz-btn" type="button" onclick="incorrectResponse4()">
+	                <img src="images/which.jpg" alt="which">
+	            </button>
+	            <button id="quiz-btn3" class="col-sm-4 quiz quiz-btn" type="button" onclick="correctResponse4()">
+	                <img src="images/iloveyou.jpg" alt="I love you">
+	            </button>
+            </div>
         </div>
-        <div id="outcome4"> </div>
+        <div id="quiz-overlay" class="hidethenshow-iloveyouQuiz hidden">
+            <div>
+            	<p id="outcome-iloveyouQuiz"></p>
+        	</div>
+        </div> 		
     </div>
     
-    <a class="btn btn-primary" id="summary-button" onClick="saveResults()">Summary</a>
+    <a class="btn btn-primary" id="summary-button" onClick="saveResults()">Check Your Results</a>
 
     <br>
     <br>
