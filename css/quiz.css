@@ -1,3 +1,7 @@
+.greeting {
+	padding: 0 0 1em;
+}
+
 .page-title {
 	color: #404040;
 }
@@ -18,6 +22,35 @@ footer {
 	border: 1px solid #b0bfbf;
 	background-color: #dfdfdf;
 	margin-bottom: 60px;
+	border-radius: 15px;
+	position: relative;
+}
+
+.inner-wrapper-catQuiz, .inner-wrapper-numbersQuiz {
+	/*position: relative;*/
+}
+
+#quiz-overlay {
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height:100%;
+	margin: 0 auto;
+	background-color: rgba(0,0,0,.8);
+	border-radius: 15px;		
+}
+
+#outcome-catQuiz h3, #outcome-numberQuiz h3, #outcome-iloveyouQuiz h3 {
+  font-size: 1.5em;
+  margin:40px 0 0;
+  color: #ffb275;
+  font-weight: 300;
+  line-height: .5em;
+}
+
+.gameover {
+	padding-top: 100px;
 }
 
 .quiz-container .row {
@@ -29,6 +62,12 @@ footer {
 	color: #404040;
 }
 
+.quiz-container .scoring-list {
+	font-size: 1em;
+	font-style: italic;
+	padding: 5px 0 10px;
+}
+
 ul {
 	padding: 0;
 	margin: 0;
@@ -38,21 +77,49 @@ li {
 	list-style: none;
 }
 
-img {
+.token-thumbnail {
+	max-width: 25px;
+	margin: 0 -2px;
+}
+
+.col-sm-4 img {
 	max-width:  auto;
 	max-height: 180px;
+	border: 2px solid #707070;
+	margin: 1px 1px 5px;
+	border-radius: 15px;
+}
+
+#quiz-overlay img {
+	border: none;
+	max-width: 180px;
+	margin: 10px 10px 0;
+}
+
+.col-sm-4  img:hover {
+	cursor: pointer;
 	border: 2px solid #404040;
-	margin: 0 0 5px;
+}
+
+#quiz-overlay  img:hover {
+	cursor: default;
+	border:none;
+}
+
+#quiz-overlay p {
+	font-size: 1.2em;
+	color: #fff;
+	font-weight: lighter;
 }
 
 .quiz-box {
 	float: none;
 	height: 200px;
-	border: 2px dashed #404040;
+	border: 1px dashed #404040;
 	padding: 5%;
 	margin: 0 auto;
 	background-color:rgba(255,178,117,.5);
-	border-radius: 20px;
+	border-radius: 15px;
 }
 
 h3 {
@@ -82,3 +149,53 @@ button {
 #summary-button:hover {
 	font-size: 1em;
 }
+
+/*.statusbox {
+	width: 70%;
+	margin: 0 auto;
+	background-color: rgba(255,178,117,.6);
+	border: 1px solid #e5a069;
+	overflow: auto;
+	padding: 15px 0 0 0;
+	color: #404040;
+	border-radius: 15px;
+}*/
+
+.moves-counter {
+	color: #404040;
+	font-size: 1em;
+	font-style: normal;
+}
+
+/*.cat-order-box, .number-order-box {
+	display: inline-block;
+	width: 50%;
+	float: left;
+	padding: 0 10px;
+}*/
+
+/*.moves-counter-catQuiz, .moves-counter-numberQuiz {
+	display: inline-block;
+	width: 50%;
+	float: right;
+	padding: 0 10px;
+}*/
+
+.result-update {
+	font-style: italic;
+	margin-right: 2px;
+	/*font-size: 1.5em;*/
+}
+
+.status-title {
+	margin: 0;
+}
+
+.fadeOut {
+	opacity: .4;
+}
+
+button:focus {
+	outline: 0;
+}
+
