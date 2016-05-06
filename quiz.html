@@ -182,21 +182,41 @@
     <div class="container quiz-container dragDropQuiz-container">
     	<div class="inner-wrapper-dragdropQuiz">
 	        <h2 class="section-title">Quiz #3</h2>
-	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>        
+	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>
+	        <div class="row scoring-list">
+		        <div class="col-sm-4 score-holder">
+			        <p class="scoring-item">1 move =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-4 score-holder">
+		        	<p class="scoring-item">2 moves = &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+		        <div class="col-sm-4 score-holder">
+		    	    <p class="scoring-item">3 moves =  &nbsp
+		        	<img class="token-thumbnail" src="images/pencil.png" alt="">
+		        	</p>
+	        	</div>
+    	    </div>
 	        <div class="row">
 	            <div class="col-sm-4  quiz-box droppable play-box" >
 	                <h3 id="randomWord"></h3>            
 	            </div>
 	        </div>
 	        <div class="row">
-	            <div class="col-sm-4 quiz draggable-2 play-img">
-	                <img id="1" class="play-img" src="images/play.jpg" alt="Play">
+	            <div id="1" class="col-sm-4 quiz draggable play-img">
+	                <img class="play-img" src="images/play.jpg" alt="Play">
 	            </div>
-	            <div class="col-sm-4 quiz draggable-2 more-img">
-	                <img id="2" class="more-img" src="images/more.jpg" alt="More">
+	            <div id="2" class="col-sm-4 quiz draggable more-img">
+	                <img class="more-img" src="images/more.jpg" alt="More">
 	            </div>
-	            <div class="col-sm-4 quiz draggable-2 same-img">
-	                <img id="3" class="same-img" src="images/same.jpg" alt="Same">
+	            <div id="3" class="col-sm-4 quiz draggable same-img">
+	                <img class="same-img" src="images/same.jpg" alt="Same">
 	            </div>
 	        </div>
         </div>
