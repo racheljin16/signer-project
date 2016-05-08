@@ -286,79 +286,89 @@ function saveResults() {
 	console.log("total:" + totalTokens);
 
 
-	// var moves_quiz1 = document.getElementById("cat-quiz-moves").innerHTML;
-	// var hint_quiz1 = document.getElementById("outcome-catQuiz").innerHTML;
-	// var result_quiz1 = '';
-	// if (hint_quiz1 == "That's correct.")
-		// result_quiz1 = "correct";
-	// else
-		// result_quiz1 = "wrong";
-	// if (moves_quiz1 == "--" || moves_quiz1 == "")
-	  // moves_quiz1 = "0"
-	// localStorage.setItem("moves_quiz1", moves_quiz1);
-	// localStorage.setItem("result_quiz1", result_quiz1);
+	var moves_quiz1 = document.getElementById("cat-quiz-moves").innerHTML;
+	var hint_quiz1 = document.getElementById("outcome-catQuiz").innerHTML;
+	var result_quiz1 = '';
+	if (hint_quiz1 == "That's correct.")
+		result_quiz1 = "correct";
+	else
+		result_quiz1 = "wrong";
+	if (moves_quiz1 == "--" || moves_quiz1 == "")
+	  moves_quiz1 = "0"
+	localStorage.setItem("moves_quiz1", moves_quiz1);
+	localStorage.setItem("result_quiz1", result_quiz1);
 	
 
-	// localStorage.setItem("catQuizTokens",catQuizTokens);
-
 	//Quiz two
-	// var hint_quiz2 = document.getElementById("outcome-numberQuiz").innerHTML;
-	// var result_quiz2 = '';
-	// if (hint_quiz2 == "That's correct.")
-	// 	result_quiz2 = "correct";
-	// else
-	// 	result_quiz2 = "wrong";
-	// localStorage.setItem("result_quiz2", result_quiz2);
+	var hint_quiz2 = document.getElementById("outcome-numberQuiz").innerHTML;
+	var result_quiz2 = '';
+	if (hint_quiz2 == "That's correct.")
+		result_quiz2 = "correct";
+	else
+		result_quiz2 = "wrong";
+	localStorage.setItem("result_quiz2", result_quiz2);
 
 	//Quiz three
 	
 	//Quiz four
 
-	// Summary
+	//Summary
 
-	// var correctAnswers = 0;
-	// correctAnswers = (result_quiz1 == "correct") + (result_quiz2 == "correct");
-	// var correctRate = correctAnswers/2.0 * 100;
-	// var scoreHistory = JSON.parse(localStorage.getItem('scoreHistory')) || [];
-	// scoreHistory.push(correctRate);
-	// localStorage.setItem('scoreHistory', JSON.stringify(scoreHistory));
+	var correctAnswers = 0;
+	correctAnswers = (result_quiz1 == "correct") + (result_quiz2 == "correct");
+	var correctRate = correctAnswers/2.0 * 100;
+	var scoreHistory = JSON.parse(localStorage.getItem('scoreHistory')) || [];
+	scoreHistory.push(correctRate);
+	localStorage.setItem('scoreHistory', JSON.stringify(scoreHistory));
 	
 	document.getElementById("chart").style.display = "block";
+	document.getElementById("bars").style.display = "block";
 
-	var resultChart;
-	resultChart = new Highcharts.Chart({
+	var resultChart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'chart',
-			type: 'column',
+			type: 'area',
 		},
 		title: {
-			text: 'Your Quiz Results'
-		},
-		xAxis: {
-			// categories: ['Quiz 1','Quiz 2','Quiz 3','Quiz 4']
+			text: 'Reords chart'
 		},
 		yAxis: {
 			title: {
-				text: "Number of Tokens Earned"
+				text: "Correct rate/ \%"
 			},
 			min: 0,
-			max: 4
+			max: 100 
 		},
 		series: [{
-			name: 'Quiz 1',
-			data: [ tokens_catQuiz ]
-		}, {
-			name: 'Quiz 2',
-			data: [ tokens_numberQuiz ]
-		}, {
-			name: 'Quiz 3',
-			data: [ tokens_dragdropQuiz ]
-		}, {
-			name: 'Quiz 4',
-			data: [ tokens_loveQuiz ]
+			name: 'Correct rate in history',
+			data: scoreHistory
 		}]
 	})
-	
+
+	var barChart = new Highcharts.Chart({
+				chart: {
+					renderTo: 'bars',
+					type: 'column'
+				},
+				title: {
+					text: 'Tokens earned'
+				},
+				xAxis: {
+					categories: ['quiz1', 'quiz2', 'quiz3', 'quiz4']
+				},
+				yAxis: {
+					
+					title: {
+						text: 'Number of tokens'
+					},
+					max:4,
+					min:0
+				},
+				series: [{
+					Name: 'Number of tokens earned',
+					data: [tokens_catQuiz, tokens_numberQuiz, tokens_dragdropQuiz, tokens_loveQuiz]
+				}]
+			});
 }
 
 
