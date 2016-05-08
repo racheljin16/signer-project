@@ -1,6 +1,5 @@
 $(function(){
 
-<<<<<<< HEAD
     $("#signup-submit").click(function() {
       var myemail = $("#username").val();
       var mypassword = $("#password").val();
@@ -56,7 +55,6 @@ $(function(){
     });
 
   // Log out
-=======
   
    
 
@@ -88,16 +86,11 @@ $(function(){
     return false;
   });
 
->>>>>>> upstream/master
   $("#logout").click(function() {
     var ref = new Firebase("https://blinding-fire-5487.firebaseio.com/?page=Auth");
     ref.unauth();
     localStorage.setItem("Greeting", "");
-<<<<<<< HEAD
-    // console.log(localStorage.Greeting);
-=======
     console.log(localStorage.Greeting);
->>>>>>> upstream/master
     window.location.href="index.html";
   });
 
