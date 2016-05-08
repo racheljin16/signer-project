@@ -29,36 +29,42 @@
     <title>Signer - Quizzes</title>
 </head>
 <body>
-    <nav class="navbar navbar-secondary navbar-default navbar-static-top">
-        <div class="container-fluid inner">
-            <div class="navbar-header col-sm-2">
-                <a class="navbar-brand" style="color: rgba(255,178,117,1);" href="index.html">Signer</a>
-            </div>
+    <nav class="navbar navbar-default navbar-static-top" style="position:fixed;">
+                        
+                        <div class="container-fluid inner onblur"  style="background-color:rgba(0,0,0,0.4);z-index:100">
+                            <div class="navbar-header col-sm-2">
+                                <a class="navbar-brand" style="color: rgba(255,178,117,1);" href="index.html">Signer</a>
+                            </div>
+                            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div id="navbar" class="navbar-collapse collapse col-sm-6 navHeaderCollapse">
+                              <ul class="nav navbar-nav navbar-right">
+                                <li><a style="color:rgba(255,178,117,1)" href="expression.html">Learn</a></li>
+                                <li><a style="color:rgba(255,178,117,1)" href="quiz.html">Quizzes</a></li>
+                                <li ><a style="color:rgba(255,178,117,1)" id="login-btn" href="signup.html"><u>Log In/Sign Up</u></a></li>
+                                <li><p id="logout">Log Out</p></li>
+                              </ul>
+                            </div>
+                        
+                            <div class="input-group mysearchbar col-sm-4 pull-right">
+                                <input type="text" id="autocomplete1" class="form-control" placeholder="Search for hand signs..." aria-describedby="basic-addon2">
+                                <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
+                            </div>
 
-            <div id="navbar" class="navbar-collapse collapse in col-sm-6">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a style="color:rgba(255,178,117,1)" href="expression.html">Learn</a></li>
-                <li><a style="color:rgba(255,178,117,1)" href="quiz.html">Quizzes</a></li>
-                <li ><a style="color:rgba(255,178,117,1)" id="login-btn" href="signup.html">Log In/Sign Up</a></li>
-                <li><p id="logout">Log Out</p></li>
-              </ul>
-            </div>
 
-            <div class="input-group mysearchbar col-sm-4 pull-right">
-                <input type="text" id="autocomplete1" class="form-control" placeholder="Search for signs..." aria-describedby="basic-addon2">
-                <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
-            </div>
-        </div>
-
-    </nav>
+                </nav>
 
     <div class="container">
+        <img src="images/pencil.png" alt="" style="max-width:10%;margin-top:10%">
         <h1 class="page-title">Quizzes</h1>
     </div>
     <h4 class="greeting" > Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
 
 
-    <div class="container quiz-container cat-quiz-container">
+    <div class="container quiz-container cat-quiz-container"  style="background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
     	<div class="inner-wrapper-catQuiz">
 	        <h2 class="section-title">Quiz #1</h2>
 	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Earn tokens by arranging the following signs in as few moves as possible to spell "C-A-T".</p>
@@ -122,7 +128,7 @@
         </div>
     </div>
         
-    <div class="container quiz-container numbers-quiz-container">
+    <div class="container quiz-container numbers-quiz-container" style="background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
     	<div class="inner-wrapper-numberQuiz">
 	        <h2 class="section-title">Quiz #2</h2>
 	        <p class="instructions"><span style="font-style: italic;font-weight: bold; ">Instructions: </span>In 3 moves or less, sort the following sign language numbers into acending order.</p>
@@ -179,7 +185,7 @@
     </div>
 
 
-    <div class="container quiz-container dragDropQuiz-container">
+    <div class="container quiz-container dragDropQuiz-container" style="background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
     	<div class="inner-wrapper-dragdropQuiz">
 	        <h2 class="section-title">Quiz #3</h2>
 	        <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Drag the correct sign to match the word.</p>
@@ -228,7 +234,7 @@
     </div>
 
 
-    <div class="container quiz-container quiz4-container">
+    <div class="container quiz-container quiz4-container" style="background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
     	<div class="inner-wrapper-iloveyouQuiz">
             <h2 class="section-title">Quiz #4</h2>
             <p class="instructions"><span style="font-style: italic;font-weight: bold;">Instructions: </span>Select the sign that means "I love you."</p>
@@ -269,20 +275,11 @@
     <br>
     <br>
     
-    <div class="container">
-        <div id="bars" style="display: none;"></div>
-    </div>
-
-    <br>
-    <br>
-    <br>
     <div id="chart" style="display: none;">
     </div>
 
-    
-
-    <footer>
-        <div class="container">
+    <footer style="background-color:white">
+        <div class="container" >
             <div class="row">
                 <div class="col-sm-3 footer-group">
                     <p class="list-title">Company</p>
