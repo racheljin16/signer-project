@@ -2,8 +2,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 /*
@@ -75,13 +74,7 @@ h3{
 }
 
 .navbar-header a {
-  font-size: 2em;
-  font-weight: 300;
-}
-
-.navbar-header a:hover {
-  font-size: 2em;
-  opacity:.7;
+  font-size: 1.6em;
 }
 
 
@@ -90,28 +83,20 @@ h3{
 }
 
 
-.navbar li { 
-   
-} 
-
 .navbar li:hover {
   opacity: .6;
   transition: .2s;
 }
 
-/*#login-btn{
-  text-decoration: underline;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 13px;
-  margin-left: 10px;
-}*/
-
 #logout{
-  margin: 12px;
-  color: rgba(255,178,117,1);
+  margin: 15px;
+  color: rgba(255,178,117,0.7);
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1.1em;
+}
+
+.mysearchbar{
+  padding-top: 0.5em;
 }
 
 
@@ -120,7 +105,7 @@ h3{
  */
 
 .cover {
-  padding: 30px 0 10px;
+  padding: 100px 0 10px;
 }
 
 .search-bar{
@@ -142,12 +127,12 @@ h3{
 
 #bgvid { 
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 0;
+    bottom: 0;
     min-width: 1080px;
     height: auto;
     z-index: -100;
-    transform: translateX(-50%) translateY(-100%);
+    /*transform: translateX(-50%) translateY(-100%);*/
     background-size: cover;
     transition: 1s opacity;
 }
@@ -222,13 +207,16 @@ h3{
   -webkit-animation-delay: 2.8s;
 } 
 
+.gotointro{
+  margin-top: 2em;
+}
+
 .gotointro:hover {
   font-size: 1.4rem;
 }
 
-.arrow-wrap:hover {
-  font-size: .56rem;
-}
+
+
 
 
 
@@ -282,10 +270,10 @@ SECTION: QUIZ
     margin: 0 auto;
 }
 
-button {
+/*button {
   width: 100%;
   margin: 0 auto;
-}
+}*/
 
 .get-started {
     background-color: rgba(255,178,117,1);
@@ -443,6 +431,7 @@ SECTION: EXPRESSIONS
   #outcome {
     margin-top: 14%;
   }
+
 }
 
 
