@@ -33,11 +33,12 @@ $(function(){
 		{value:"9", url: "expression.html#9"},
 		{value:"10", url: "expression.html#10"},
 	];
+	
 	$("#autocomplete1").autocomplete({
 		source: searchDBString,
 		select: function(event, ui){
 			window.location = ui.item.url;
-	}
+		}
 	});
 
 });
