@@ -329,7 +329,7 @@ function saveResults() {
 			renderTo: 'chart',
 			type: 'area',
 		},
-		title: {
+		title: { 
 			text: 'Reords chart'
 		},
 		yAxis: {
