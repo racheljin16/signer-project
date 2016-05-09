@@ -3,20 +3,20 @@ body{
 	background-color: rgba(255,178,117,1)
 }
 
-a{
+/*a{
 	font-size: 1.2em;
 }
 
 a:hover {
 	font-size: 1.2em;
-}
+}*/
 
 .navbar-header a {
 	font-weight: lighter;
 }
 
 .navbar-header a:hover {
-	font-size: 2em;
+	/*font-size: 2em;*/
 	opacity: .7;
 }
 
