@@ -97,6 +97,10 @@ h3{
   padding-top: 0.5em;
 }
 
+#autocomplete1{
+  border-radius: 4px 0 0 4px;
+}
+
 
 /*
  * Cover
@@ -273,9 +277,11 @@ SECTION: QUIZ
 /**********************************************
 SECTION: GO MOBILE
 **********************************************/
-
+#gomobile{
+  color: #ffffff;
+}
 .section_download{
-  background: rgba(0,0,0,.1);
+  background: rgba(255,178,117,1);
   padding-bottom: 5em;
 }
 
@@ -301,7 +307,7 @@ SECTION: GO MOBILE
 /*SECTION: FOOTER*/
 
 footer {
-    background-color: rgba(255,178,117,1);
+    /*ackground-color: rgba(255,178,117,1);*/
     padding: 40px 0;
     box-shadow: 0px -5px 10px rgba(0,0,0,0.2);
 }
