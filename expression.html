@@ -6,6 +6,7 @@
     <link href="css/cover.css" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/expression.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/humanity/jquery-ui.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
 	<title>Expressions</title>
 </head>
 <body>
@@ -41,12 +42,12 @@
 
 	
 	<div class="container">
-		<img src="images/tree.png" alt="" style="max-width:10%;margin-top:10%">
+		<img src="images/tree.png" alt="" style="width:100px;margin-top:5%;">
 		<h1 class="page-title">Learn</h1>
 	</div>
 	<h4 class="greeting" > Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
-	<div class="container" style="background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)" >
-		<div class="ABC" style="padding:5%;">
+	<div class="container" style="" >
+		<div class="ABC" style="padding:5%;background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
 		<h2 style="margin-bottom:5%; color:gray;">ABC</h2>
 			<div class="row">
 				<a name="A" class="expression-size col-sm-4 example-image-link" data-lightbox="example-set" href="images/a.jpg" data-title="A">
@@ -90,8 +91,8 @@
 			
 		</div>
 		
-		<div class="123" style="padding:5%;">
-		<h2 style="margin-bottom:5%;color:gray;">123</h3>
+		<div class="123" style="padding:5%;background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
+		<h2 style="margin-bottom:5%;color:gray;">Number</h2>
 			<div class="row">
 				<a name="1" class="expression-size col-sm-4 example-image-link" data-lightbox="example-set" href="images/one.jpg" data-title="One">
 					<img class="example-image" src="images/one.jpg" alt="">
@@ -151,7 +152,7 @@
 			</div>
 		</div>
 		
-		<div class="words" style="padding:5%;">
+		<div class="words" style="padding:5%;background-color:white;margin-bottom:5em;box-shadow: 1px 1px 10px rgba(0,0,0,0.2)">
 		<h2 style="margin-bottom:5%;color:gray;">Words</h2>
 			<div class="row">
 				<a name="bathroom" class="expression-size col-sm-4 example-image-link" data-lightbox="example-set" href="images/bathroom.jpg" data-title="Bathroom">
@@ -251,8 +252,8 @@
                 <div class="col-sm-3 footer-group">
                     <p class="list-title">Explore</p>
                     <ul class="footer-list">
-                        <a href="#"><li>Register</li></a>
-                        <a href="#"><li>Blog</li></a>
+                        <a href="expression.html"><li>Learn</li></a>
+                        <a href="quiz.html"><li>Quizzes</li></a>
                     </ul>
                 </div>
                 <div class="col-sm-3 footer-group">
@@ -291,10 +292,13 @@
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- <script src="js/jqueryui.js"></script> -->
 <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<script src="js/lightbox-plus-jquery.min.js"></script>
 <script src="js/signup.js"></script>
 <script src="js/jquery.ui.touch-punch.min.js"></script>
-<script src="js/jqueryui.js"></script>
+
+
 
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
