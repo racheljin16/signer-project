@@ -286,37 +286,20 @@ function saveResults() {
 	console.log("total:" + totalTokens);
 
 
-	var moves_quiz1 = document.getElementById("cat-quiz-moves").innerHTML;
-	var hint_quiz1 = document.getElementById("outcome-catQuiz").innerHTML;
-	var result_quiz1 = '';
-	if (hint_quiz1 == "That's correct.")
-		result_quiz1 = "correct";
-	else
-		result_quiz1 = "wrong";
-	if (moves_quiz1 == "--" || moves_quiz1 == "")
-	  moves_quiz1 = "0"
-	localStorage.setItem("moves_quiz1", moves_quiz1);
+	//chart 2 - correct rate
+	var result_quiz1 = tokens_catQuiz != 0 ? 1 : 0;
 	localStorage.setItem("result_quiz1", result_quiz1);
-	
-
-	//Quiz two
-	var hint_quiz2 = document.getElementById("outcome-numberQuiz").innerHTML;
-	var result_quiz2 = '';
-	if (hint_quiz2 == "That's correct.")
-		result_quiz2 = "correct";
-	else
-		result_quiz2 = "wrong";
+	var result_quiz2 = tokens_numberQuiz != 0 ? 1 : 0;
 	localStorage.setItem("result_quiz2", result_quiz2);
+	var result_quiz3 = tokens_dragdropQuiz != 0 ? 1 : 0;
+	localStorage.setItem("result_quiz3", result_quiz3);
+	var result_quiz4 = tokens_loveQuiz != 0 ? 1 : 0;
+	localStorage.setItem("result_quiz4", result_quiz4);
 
-	//Quiz three
 	
-	//Quiz four
-
-	//Summary
-
 	var correctAnswers = 0;
-	correctAnswers = (result_quiz1 == "correct") + (result_quiz2 == "correct");
-	var correctRate = correctAnswers/2.0 * 100;
+	correctAnswers = result_quiz1 + result_quiz2 + result_quiz3 + result_quiz4;
+	var correctRate = correctAnswers/4.0 * 100;
 	var scoreHistory = JSON.parse(localStorage.getItem('scoreHistory')) || [];
 	scoreHistory.push(correctRate);
 	localStorage.setItem('scoreHistory', JSON.stringify(scoreHistory));
@@ -330,7 +313,7 @@ function saveResults() {
 			type: 'area',
 		},
 		title: { 
-			text: 'Reords chart'
+			text: 'Records chart'
 		},
 		yAxis: {
 			title: {
@@ -345,6 +328,7 @@ function saveResults() {
 		}]
 	})
 
+//chart 1 - token numbers
 	var barChart = new Highcharts.Chart({
 				chart: {
 					renderTo: 'bars',
