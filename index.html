@@ -7,7 +7,7 @@
     <meta name="description" content="a website to teach adults to sign">
     <meta name="author" content="Jeremy Perk, Rachel Jin, Tony Feng">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
  
     <link href="css/cover.css" rel="stylesheet"> 
     <link href="css/intro.css" rel="stylesheet"> 
@@ -41,25 +41,25 @@
 	
     	<section class="bgc hindenme">
             <a href="#">
-                <img src="images/close1.png" alt="" class="closeme" align="right">
+                <img src="images/close.png" alt="" class="closeme" align="right">
             </a>
             <div class="container">
             
-                <h2 align="center" style="color:#8B572A;margin-bottom:15%" class="intro-h2">Learning process</h2>
+                <h2 align="center" style="color:#8B572A" class="intro-h2">Learning process</h2>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-4">
                         <a href="signup.html"><img src="images/leaf.png" alt=""></a>
                         <h2 align="center" style="margin-bottom:5%;color:#8B572A">STEP:1</h2>
                         <h3 align="center">Sign up</h3>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-4">
                         <a href="expression.html"><img src="images/tree.png" alt=""></a>
                         <h2 align="center" style="margin-bottom:5%;color:#8B572A">STEP:2</h2>
                         <h3 align="center">Learn</h3>
                     </div>
-                    <div class="col-md-4 col-xs-6">
+                    <div class="col-md-4">
                         <a href="quiz.html"><img src="images/pencil.png" alt=""></a>
                         <h2 align="center" style="margin-bottom:5%;color:#8B572A">STEP:3</h2>
                         <h3 align="center">Quizzess</h3>
@@ -70,64 +70,62 @@
 
     <header class="site-wrapper">
 	
-        
-    <div class="site-wrapper-inner">
-
-
-        <nav class="navbar navbar-inverse mynavbar">
-            <div class="container-fluid inner">
-                <div class="navbar-header">
-                    <a class="navbar-brand" style="color: rgba(255,178,117,1);" href="index.html">Signer</a>
-                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse col-sm-6">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a style="color:rgba(255,178,117,0.7)" href="expression.html">Learn</a></li>
-                    <li><a style="color:rgba(255,178,117,0.7)" href="quiz.html">Quizzes</a></li>
-                    <li ><a style="color:rgba(255,178,117,0.7)" id="login-btn" href="signup.html"><u>Log In/Sign Up</u></a></li>
-                    <li><p id="logout">Log Out</p></li>
-                  </ul>
-                </div>
-
-                <div class="input-group mysearchbar col-sm-4 pull-right">
-                    <input type="text" id="autocomplete1" class="form-control" placeholder="Search for hand signs..." aria-describedby="basic-addon2">
-                    <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
-                </div>
-            </div>
-        </nav>
-
-        <div id="text_video">
-            <div class="inner toptext">
-                <h1 class="signer-title">Learn To Sign</h1>
-
-                <p class="lead" id="work-btn">
-                      <a href="#" class="btn btn-default gotointro btncolor" >How it works</a>
-                </p>
-
-                <h4 id="welcome_tag"> Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
-
-            </div>
+	<div>
+            <div id="overlay"></div>
             <video autoplay id="bgvid" loop>
                 <source src="video/sign.mp4" type="video/mp4">
             </video>
         </div>
-
         
-     
-    </div>
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                <nav class="navbar navbar-default navbar-static-top">
+                    <div class="container-fluid inner">
+                        <div class="navbar-header col-sm-2">
+                            <a class="navbar-brand" style="color: rgba(255,178,117,1);" href="index.html">Signer</a>
+                        </div>
+
+                        <div id="navbar" class="navbar-collapse collapse in col-sm-6">
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a style="color:rgba(255,178,117,1)" href="expression.html">Learn</a></li>
+                            <li><a style="color:rgba(255,178,117,1)" href="quiz.html">Quizzes</a></li>
+                            <li ><a style="color:rgba(255,178,117,1)" id="login-btn" href="signup.html">Log In/Sign Up</a></li>
+                            <li><p id="logout">Log Out</p></li>
+                          </ul>
+                        </div>
+
+                        <div class="input-group mysearchbar col-sm-4 pull-right">
+                            <input type="text" id="autocomplete1" class="form-control" placeholder="Search for hand signs..." aria-describedby="basic-addon2">
+                            <span style="background-color: rgba(255,178,117,1); color: #fff;" class="input-group-addon" id="basic-addon2">Search</span>
+                        </div>
+                    </div>
+
+                </nav>
 
 
+                <div class="inner">
+                    <h1 class="cover signer-title">Learn To Sign</h1>
+                    <p class="lead">
+                          <a href="#" class="btn btn-default gotointro btncolor" >How it works</a>
+                    </p>
+                    <h4 style="color: rgba(255,255,255,0.7); padding-top: 2em;"> Welcome <script>document.write(localStorage.getItem("Greeting"));</script> </h4>
+                </div>
+
+                <section class="scroll">
+                    <a class="arrow-wrap" href="#content">
+                        <span class="arrow"></span>
+                    </a>
+                </section>
+             </div>      
+        </div>
     </header>
 
-    <div id="content" style="margin-top: 3em;">
+    <div id="content">
         <div class="section-quiz">
             <div class="container">
-                <h2>Go Ahead, Quiz Yourself</h2>
+                <h2 class="cover">Go Ahead, Quiz Yourself</h2>
                 <div class="col-lg-12 vid-holder">
                     <h3 class="vid-question">What is he asking?</h3>
                     <!-- <div id="vid-holder"> -->
@@ -154,7 +152,7 @@
 
         <div class="section_download">
             <div class="container">
-                <h2 id="gomobile" class="cover">Go Mobile</h2>
+                <h2 class="cover">Go Mobile</h2>
                 <div class="inner"></div>
                 <div class="row">
                     <div class="col-lg-7 col-sm-6 mobile-display">
@@ -223,7 +221,6 @@
     </footer>   
 
     <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="js/jqueryui.js"></script>
