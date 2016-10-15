@@ -1,2 +1,2 @@
 # signer-project
-an ongoing project with bootstrap
+It's an ongoing programming project with HTML/CSS/jQuery/Bootstrap...
